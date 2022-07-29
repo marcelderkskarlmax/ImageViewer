@@ -17,7 +17,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
 
     //UI
     public var itemView = T()
-    let scrollView = UIScrollView()
+    public let scrollView = UIScrollView()
     let activityIndicatorView = UIActivityIndicatorView(style: .white)
 
     //DELEGATE / DATASOURCE
@@ -220,6 +220,10 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            UIAccessibility.post(notification: .screenChanged, argument: self?.itemView)
+        }
+        
         self.delegate?.itemControllerWillAppear(self)
     }
 
