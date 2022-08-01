@@ -209,6 +209,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
                     itemView?.isAccessibilityElement = image.isAccessibilityElement
                     itemView?.accessibilityLabel = image.accessibilityLabel
                     itemView?.accessibilityTraits = image.accessibilityTraits
+                    itemView?.accessibilityHint = image.accessibilityHint
 
                     self?.view.setNeedsLayout()
                     self?.view.layoutIfNeeded()
