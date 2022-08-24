@@ -89,6 +89,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
             case .activityViewByLongPress(let enabled):             activityViewByLongPress = enabled
             case .spinnerColor(let color):                          activityIndicatorView.color = color
             case .spinnerStyle(let style):                          activityIndicatorView.style = style
+            case .spinnerAccessibilityLabel(let label):             activityIndicatorView.accessibilityLabel = label
 
             case .displacementTransitionStyle(let style):
 
@@ -111,6 +112,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         configureScrollView()
         configureGestureRecognizers()
 
+        activityIndicatorView.accessibilityTraits = .none
         activityIndicatorView.hidesWhenStopped = true
     }
 

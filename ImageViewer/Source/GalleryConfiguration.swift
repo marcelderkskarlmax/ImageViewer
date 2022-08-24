@@ -48,6 +48,9 @@ public enum GalleryConfigurationItem {
     /// Tint color for the spinner.
     case spinnerColor(UIColor)
 
+    /// Accessibiliy announcement when spinner is shown
+    case spinnerAccessibilityLabel(String)
+    
     /// Layout behaviour for optional header view.
     case headerViewLayout(HeaderLayout)
 
